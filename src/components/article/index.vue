@@ -9,7 +9,8 @@
       <h2>精选文章</h2>
       <i class="line"></i>
       <h3>Selected articles</h3>
-      <a href="javascript:;" class="pub_ar">发布文章</a>
+      <!-- <a href="javascript:;" class="pub_ar">发布文章</a> -->
+      <router-link to="/article/publish" class="pub_ar">发布文章</router-link>
     </div>
     <div class="ar_bk" v-for="i in 3" @click="goDetail(i)">
       <div class="pic">

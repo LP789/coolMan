@@ -5,7 +5,8 @@
           <h2>技术交流</h2>
           <p class="sub_tit">technical exchange</p>
         </div>
-        <a href="javascript:;" class="pub_btn">发布</a>
+        <!-- <a href="javascript:;" class="pub_btn">发布</a> -->
+        <router-link to="/skill/publish" class="pub_btn">发布</router-link>
       </section>
       <section class="tec_list">
         <div class="tec_item" v-for="i in 4"  @click="goDetail(i)">

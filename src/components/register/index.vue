@@ -1,6 +1,6 @@
 <template>
   <section class="login">
-    <h2><img src="~assets/video.png" alt=""></h2>
+    <h2><img src="~assets/logo.png" alt=""></h2>
     <div class="l_input">
       <input type="text" name="email" placeholder="昵称">
     </div>
@@ -15,10 +15,7 @@
       <input type="text" name="password" placeholder="设置密码">
     </div>
 
-    <button class="l_btn">登录</button>
-    <div class="r_login">
-      <a href="javasacript:;">注册新账号</a>
-    </div>
+    <button class="l_btn">注册</button>
   </section>
 </template>
 

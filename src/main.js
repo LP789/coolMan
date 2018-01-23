@@ -15,8 +15,13 @@ import Hd from '@/components/template/Hd.vue'
 import setHd from '@/components/template/setHd.vue'
 import Ft from '@/components/template/Ft.vue'
 
-
-import  { ToastPlugin, ConfirmPlugin, LoadingPlugin, Flexbox, FlexboxItem, } from 'vux'
+import {
+	ToastPlugin,
+	ConfirmPlugin,
+	LoadingPlugin,
+	Flexbox,
+	FlexboxItem,
+} from 'vux'
 Vue.use(ToastPlugin)
 Vue.use(ConfirmPlugin)
 Vue.use(LoadingPlugin)
@@ -31,8 +36,12 @@ Vue.use(VueRouter)
 /*const router = new VueRouter({
   routes
 })*/
-const components ={
-  Hd,setHd,Ft,Flexbox, FlexboxItem,
+const components = {
+	Hd,
+	setHd,
+	Ft,
+	Flexbox,
+	FlexboxItem,
 }
 Object.keys(components).forEach(key => Vue.component(key, components[key]))
 
@@ -42,7 +51,7 @@ Vue.config.productionTip = false
 
 /* eslint-disable no-new */
 new Vue({
-  router,
-  render: h => h(App),
+	router,
+	render: h => h(App),
 
 }).$mount('#app-box')

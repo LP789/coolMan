@@ -1,6 +1,6 @@
 <template>
   <section class="login">
-    <h2><img src="~assets/video.png" alt=""></h2>
+    <h2><img src="~assets/logo.png" alt=""></h2>
     <div class="l_input">
       <input type="text" name="email" placeholder="邮箱">
     </div>

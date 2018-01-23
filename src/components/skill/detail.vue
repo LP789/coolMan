@@ -24,7 +24,6 @@
       <section class="t_de_reply">
         <div class="t_de_head clearfix">
           <h2>125个回答</h2>
-          <a href="javascript:;" class="t_de_more">MORE>></a>
         </div>
         <div class="clearfix t_de_cont">
           <div class="t_replay_hd">
@@ -34,20 +33,9 @@
           </div>
           <div class="show_txt">
             <p class="txt">首先是BBC三大“镇馆之宝”（自封的）《地球脉动》几乎是有史以来最好的生态纪录片，用接近上帝的视角，审视这个叫做地球的星球。。。</p>
-            <img alt="" src="~assets/technical/item_1.jpg" class="item_img"/>
-            <p class="txt">人类看完足以无地自容的片子，哪怕只是地窖里微不足道的小虫子，每天也在上演生存的史诗<br/>
-              为了吃饭，为了繁衍，为了生存下去，无数精彩甚至悲壮的生物行为，在这个生生不息的地球上无限的演绎下去，地球也因此不朽。
-            </p>
-            <p class="txt" style="margin-top: 0.5rem;">《生命》：</p>
-            <img alt="" src="~assets/technical/item_2.jpg" class="item_img"/>
-            <p class="txt">天地玄黄，轮回。无解说，纯画面，美到极致。</p>
           </div>
         </div>
-        <p class="tec_op">
-          <span class="icon_comment">评论：123</span>
-          <span class="icon_love">喜欢：123</span>
-          <span class="icon_send">转发：12346</span>
-        </p>
+        <a href="javascript:;" class="t_de_more">更多评论∨</a>
       </section>
       <!--相关交流-->
       <section class="t_de_reply">
@@ -233,7 +221,8 @@
   .t_de_more{
     font-size: 0.30rem;
     color: #cfcfcf;
-    float: right;
+    text-align: center;
+    display: block;
   }
   .t_de_reply .t_de_cont{
     padding: 0 0.2rem;

@@ -1,9 +1,11 @@
 <template>
   <header>
-    <div class="clearfix cont">
-      <div class="navList" id="head_li" @click="blSlide = !blSlide"></div>
-      <span class="hd_close" id="head_close">X</span>
-      <img alt="" src="img/logo.png"/>
+    <!-- 用户登录显示 -->
+    <div class="clearfix cont countLogin">
+      
+      <a href="javascript:;" @click="blSlide = !blSlide" v-show="!blSlide" class="nav_list_a"><div class="navList"></div></a>
+      <span class="hd_close" id="head_close" v-show="blSlide" @click="blSlide = !blSlide">X</span>
+      <img alt="" src="~assets/logo.png"/>
       <div class="us_info">
 				<span class="file_point">
 					<img alt="" src="~assets/technical/message.png">
@@ -11,18 +13,27 @@
         <span class="hd_pic">
 					<img alt="" src="~assets/technical/persion_he_pic.png">
 				</span>
-        <span class="file_up">上传作品</span>
+        <!-- <span class="file_up" to="/account/works">上传作品</span> -->
+        <router-link to="/account/works" class="file_up">上传作品</router-link>
       </div>
-      <router-link to="/login" class="login"><img alt="" src="img/login.png"></router-link>
     </div>
+    <!-- 用户未登录显示 -->
+    <div class="clearfix cont" style="display:none;">
+      <a href="javascript:;" @click="blSlide = !blSlide" v-show="!blSlide"><div class="navList"></div></a>
+      <span class="hd_close" id="head_close" v-show="blSlide" @click="blSlide = !blSlide">X</span>
+      <img alt="" src="~assets/logo.png"/>
+      <a href="javascript:;" class="login"><img alt="" src="~assets/login.png"></a>
+      <router-link to="/login" class="login"><img alt="" src="~assets/login.png"></router-link>
+    </div>
+      <!-- navList -->
     <div class="slide_cont" id="head_slide_cont" v-show="blSlide">
       <div class="search_input">
-        <img alt="" src="img/search_icon.png" class="s_icon"/>
+        <img alt="" src="~assets/search_icon.png" class="s_icon"/>
         <input type="text" name="" placeholder="请输入你想要搜索的关键字"/>
       </div>
       <ul class="hd_nav_li">
-        <li v-for="(item,index) in routerArr">
-          <router-link :to="item.url">{{item.value}}</router-link>
+        <li v-for="(item,index) in routerArr" @click="blSlide = !blSlide">
+          <router-link :to="item.url" >{{item.value}}</router-link>
         </li>
       </ul>
     </div>
@@ -37,15 +48,14 @@
             blSlide:false,
             routerArr:[
               {value:'首页',url:'/index'},
-              {value:'社区',url:'/community'},
+              {value:'社区',url:'/community/index'},
               {value:'文章',url:'/article/index'},
               {value:'问答',url:'/answer/index'},
 
-            ]
+            ],
           }
         },
         methods:{
-
         },
         mounted(){
 
@@ -67,6 +77,13 @@
     position: relative;
     width: 100%;
     height: 100%;
+  }
+  .nav_list_a{
+    width: 1.5rem;
+    height: 1rem;
+    position: absolute;
+    top: 0px;
+    left: 0px;
   }
   header .navList{
     position: absolute;
@@ -92,8 +109,16 @@
   header .navList:after{ top: -0.2rem;}
   header .cont > img{
     display: block;
-    height: 0.8rem;
-    margin: 0 auto;
+    height: 0.4rem;
+    margin: 0.25rem auto;
+    width: 2.8rem;
+  }
+  header .countLogin > img{
+    display: block;
+    height: 0.4rem;
+    margin-top: 0.25rem;
+    margin-left: 1.55rem;
+    width: 2.8rem;
   }
   header .login{
     position: absolute;
@@ -101,6 +126,10 @@
     right: 0;
     height: 0.9rem;
     width: 1.1rem;
+  }
+  .login{
+    background-color: rgba(30,33,38,1);
+    padding: 0;
   }
   header .login img{
     height: 0.6rem;
@@ -146,14 +175,14 @@
   /*头部下拉*/
   .slide_cont{
     position: absolute;
-    top: 0.9rem;
+    top: 0.5rem;
     left: 0;
     width: 100%;
     height: auto;
     background-color: #24272d;
     padding: 0 0.2rem 0.3rem;
-    visibility: hidden;
-    opacity: 0;
+    /*visibility: hidden;
+    opacity: 0;*/
     transform: translateY(0.4rem);
     transition: all 0.3s ease;
   }
@@ -202,7 +231,7 @@
     font-size: 0.4rem;
     color: #fff;
     left: 0.4rem;
-    display: none;
+    /*display: none;*/
     cursor: pointer;
   }
   .search_input  input::-webkit-input-placeholder { color: #363a44; }

@@ -1,6 +1,6 @@
 <template>
     <div>
-
+    <div class="dib">
       <section class="index_banner">
         <div class="swiper-container">
           <div class="swiper-wrapper">
@@ -28,7 +28,8 @@
         <div class="tec_head">
           <h2>技术交流<span>TECHNICAL EXCHANGE</span></h2>
           <i class="line"></i>
-          <a class="more">MORE&gt;&gt;</a>
+          <!-- <a class="more">MORE&gt;&gt;</a> -->
+          <router-link to="/skill/list" class="more">MORE&gt;&gt;</router-link>
         </div>
         <ul class="pro_item">
           <li class="clearfix" v-for="i in 2">
@@ -55,7 +56,8 @@
         <div class="tec_head">
           <h2>课程<span>COURSE</span></h2>
           <i class="line"></i>
-          <a class="more">MORE&gt;&gt;</a>
+          <!-- <a class="more">MORE&gt;&gt;</a> -->
+          <router-link to="/skill/list" class="more">MORE&gt;&gt;</router-link>
         </div>
         <ul class="pro_item">
           <li class="clearfix" v-for="item in 3">
@@ -78,9 +80,9 @@
       <!--最新注册-->
       <section class="tec_exc">
         <div class="tec_head">
-          <h2>课程<span>COURSE</span></h2>
+          <h2>最新注册<span>The latest registration</span></h2>
           <i class="line"></i>
-          <a class="more">MORE&gt;&gt;</a>
+          <router-link to="/skill/list" class="more">MORE&gt;&gt;</router-link>
         </div>
         <ul class="hr_item clearfix">
           <li v-for="i in 4">
@@ -113,6 +115,7 @@
         </ul>
       </section>
     </div>
+    </div>
 </template>
 
 <script>
@@ -121,7 +124,8 @@
         data() {
             return {}
         },
-        methods: {},
+        methods: {
+        },
         mounted() {
         }
     }
