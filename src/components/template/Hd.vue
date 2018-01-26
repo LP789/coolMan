@@ -10,7 +10,7 @@
 				<span class="file_point">
 					<img alt="" src="~assets/technical/message.png">
 				</span>
-        <span class="hd_pic">
+        <span class="hd_pic" @click="hdPerson = !hdPerson">
 					<img alt="" src="~assets/technical/persion_he_pic.png">
 				</span>
         <!-- <span class="file_up" to="/account/works">上传作品</span> -->
@@ -37,6 +37,12 @@
         </li>
       </ul>
     </div>
+    <!-- 点击用户头像 -->
+    <ul class="hd_person_li dib" v-show="hdPerson">
+        <li v-for="(item,index) in hdPersonArr" @click="hdPerson = !hdPerson">
+          <router-link :to="item.url" >{{item.value}}</router-link>
+        </li>
+      </ul>
   </header>
 </template>
 
@@ -46,6 +52,7 @@
         data(){
           return {
             blSlide:false,
+            hdPerson:false,
             routerArr:[
               {value:'首页',url:'/index'},
               {value:'社区',url:'/community/index'},
@@ -53,6 +60,11 @@
               {value:'问答',url:'/answer/index'},
 
             ],
+            hdPersonArr:[
+              {value:'个人资料', url:'/account/person'},
+              {value:'身份认证', url:'/account/identity'},
+              {value:'个人中心', url:'/account'},
+            ]
           }
         },
         methods:{
@@ -223,6 +235,23 @@
   }
   .hd_nav_li li a{ color: #fff;}
   .hd_nav_li li.active a{ color: #f0b222;}
+  .hd_person_li{
+    position: absolute;
+    top: 0.9rem;
+    background-color: rgba(232, 225, 225, 0.71);
+    right: 1.1rem;
+  }
+  .hd_person_li li{
+    height: 0.8rem;
+    padding: 0.3rem 0 0 0.44rem;
+    font-size: 0.35rem;
+    width: 2rem;
+    text-align: center;
+    line-height: 0.28rem;
+  }
+  .hd_person_li li+li{
+    border-top: 1px solid #f3f3f3;
+  }
   header .hd_close{
     position: absolute;
     height: 0.9rem;

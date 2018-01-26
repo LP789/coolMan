@@ -1,138 +1,39 @@
 <template>
 	<div>
 	<section class="id_set">
-		<h2>个人资料</h2>
+		<h2>作品上传</h2>
+		<div class="upload_show">
+			<img alt="" src="" id="show_work"/>
+		</div>
+		<div class="w_up_cont clearfix">
+			<a href="javascript:;">上传</a>
+		</div>
 		<ul class="set_list">
 			<li class="clearfix">
-				<h3>头像<span>*</span></h3>
-				<div class="input_cont">
-					<div class="hd_show">
-						<img alt="" src="img/set_head.png"/>
-					</div>
-					<div class="edit_hd_pic">
-						<p class="update"><input type="file" name=""/>修改头像</p>
-						<p class="sub_tit">（仅支持JPG、PNG文件小于6M）</p>
-					</div>
-				</div>
-			</li>
-			<li class="clearfix">
-				<h3>昵称<span>*</span></h3>
-				<div class="input_cont">
-					<input type="text" name="" class="id_input name">
-				</div>
-			</li>
-			<li class="clearfix">
-				<h3>姓名<span>*</span></h3>
-				<div class="input_cont">
-					<input type="text" name="" class="id_input u_name">
-					<h4>性别</h4>
-					<input type="text" name="" class="id_input sex">
-				</div>
-			</li>
-			<li class="clearfix">
-				<h3>电话<span>*</span></h3>
+				<h3>作品名称<span>*</span></h3>
 				<div class="input_cont">
 					<input type="text" name="" class="id_input mid">
 				</div>
 			</li>
 			<li class="clearfix">
-				<h3>邮箱<span>*</span></h3>
+				<h3>作品链接<span>*</span></h3>
 				<div class="input_cont">
-					<input type="text" name="" class="id_input mid">
+					<input type="text" name="" class="id_input name" id="work_url">
 				</div>
 			</li>
 			<li class="clearfix">
-				<h3>行业<span>*</span></h3>
-				<div class="input_cont">
-					<input type="text" name="" class="id_input mid">
-				</div>
-			</li>
-			<li class="clearfix">
-				<h3>生日</h3>
-				<div class="input_cont">
-					<select class="b_year">
-						<option value="">年</option>
-						<option value="2017">2017</option>
-						<option value="2016">2016</option>
-						<option value="2015">2015</option>
-						<option value="2014">2014</option>
-					</select>
-					<select class="b_month">
-						<option value="">月</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-					</select>
-					<select class="b_day">
-						<option value="">日</option>
-						<option value="1">1</option>
-						<option value="2">2</option>
-						<option value="3">3</option>
-						<option value="4">4</option>
-					</select>
-				</div>
-			</li>
-			<li class="clearfix">
-				<h3>所在地区</h3>
-				<div class="input_cont">
-					<select class="b_pro">
-						<option value="">省份</option>
-						<option value="河南省">河南省</option>
-						<option value="湖北省">湖北省</option>
-						<option value="青海省">青海省</option>
-					</select>
-					<select class="b_city">
-						<option value="">城市</option>
-						<option value="华北">华北</option>
-						<option value="华东">华东</option>
-						<option value="华西">华西</option>
-						<option value="华南">华南</option>
-					</select>
-					<select class="b_area">
-						<option value="">地区</option>
-						<option value="上游">上游</option>
-						<option value="下游">下游</option>
-						<option value="中油">中油</option>
-						<option value="环游">环游</option>
-					</select>
-				</div>
-			</li>
-			<li class="clearfix">
-				<h3>年龄</h3>
-					<div class="input_cont">
-						<input type="text" name="" class="id_input u_age">
-						<h4>职位</h4>
-						<input type="text" name="" class="id_input u_work">
-					</div>
-			</li>
-			<li class="clearfix">
-				<h3>在职公司</h3>
-				<div class="input_cont">
-					<input type="text" name="" class="id_input mid">
-				</div>
-			</li>
-			<li class="clearfix">
-				<h3>技能标签</h3>
-				<div class="input_cont">
-					<textarea class="id_textarea"></textarea>
-				</div>
-			</li>
-			<li class="clearfix">
-				<h3>个人简介</h3>
-				<div class="input_cont">
-					<textarea class="id_textarea"></textarea>
-				</div>
+				<a class="w_url_up">
+					<input type="file" id="up_file_input">浏览</a>
 			</li>
 		</ul>
-		<a href="javascript:;" class="per_save">保存</a>
+		<div class="up_submit_btn">提交</div>
 	</section>
 	</div>
 </template>
 
 <script>
     export default {
-        name: "person",
+        name: "works",
         data() {
             return {}
         },
@@ -288,46 +189,6 @@
 	background: #ffbc22;
 	margin: 0 auto;
 	border-radius: 0.06rem;
-}
-/*个人信息设置样式*/
-.input_cont .hd_show{
-	float: left;
-	height: 1.68rem;
-	width: 1.68rem;
-	border-radius: 50%;
-	overflow: hidden;
-}
-.input_cont .hd_show img{ width: 100%; height: 100%; }
-.input_cont .edit_hd_pic{
-	float: left;
-	width: 3.38rem;
-	height: 1.68rem;
-	margin-left: 0.54rem;
-	font-size: 0;
-}
-.edit_hd_pic .update{
-	position: relative;
-	font-size: 0.26rem;
-	color: #ffbc22;
-	line-height: 0.3rem;
-	margin-top: 0.3rem;
-}
-.edit_hd_pic .update input{
-	position: absolute;
-	z-index: 0;
-	width: 100%;
-	height: 100%;
-	opacity: 0;
-}
-.edit_hd_pic .sub_tit{
-	font-size: 0.24rem;
-	color:#a1a5ab;
-	line-height: 0.3rem;
-	margin-top: 0.1rem;
-}
-.set_list .input_cont .sub_tit{
-	font-size: 0.24rem;
-	color: #a1a5ab;
 }
 /*作品上传*/
 .upload_show{

@@ -11,9 +11,14 @@ Vue.use(JsBridge)
 import VueScroller from 'vue-scroller'
 Vue.use(VueScroller)
 //import Home from './components/HelloFromVux'
+import VueAwesomeSwiper from 'vue-awesome-swiper'
+import 'swiper/dist/css/swiper.css'
+Vue.use(VueAwesomeSwiper, /* { default global options } */ )
+
 import Hd from '@/components/template/Hd.vue'
 import setHd from '@/components/template/setHd.vue'
 import Ft from '@/components/template/Ft.vue'
+import swiperIndex from '@/components/template/swiper.vue'
 
 import {
 	ToastPlugin,
@@ -42,6 +47,7 @@ const components = {
 	Ft,
 	Flexbox,
 	FlexboxItem,
+	swiperIndex,
 }
 Object.keys(components).forEach(key => Vue.component(key, components[key]))
 

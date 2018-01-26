@@ -1,27 +1,7 @@
 <template>
-    <div>
     <div class="dib">
       <section class="index_banner">
-        <div class="swiper-container">
-          <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="ban_cont">
-                <img src="~assets/index/banner.png">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ban_cont">
-                <img src="~assets/index/banner.png">
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="ban_cont">
-                <img src="~assets/index/banner.png">
-              </div>
-            </div>
-          </div>
-          <div class="swiper-pagination"></div>
-        </div>
+        <swiperIndex></swiperIndex>
       </section>
       <!--技术交流-->
       <section class="tec_exc">
@@ -114,7 +94,6 @@
 
         </ul>
       </section>
-    </div>
     </div>
 </template>
 

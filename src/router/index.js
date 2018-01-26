@@ -15,6 +15,18 @@ import SkillDetail from '@/components/skill/detail'
 import SkillComment from '@/components/skill/comment'
 import SkillPublish from '@/components/skill/publish'
 import Index from '@/components/index'
+//个人信息
+import Identity from '@/components/account/identity'
+import Person from '@/components/account/person'
+import Workupload from '@/components/account/workupload'
+// 个人中心
+import Account from '@/components/account/account'
+import AccountWorks from '@/components/account/works'
+import AccountArticle from '@/components/account/article'
+import AccountLove from '@/components/account/love'
+import AccountCircle from '@/components/account/circle'
+import AccountSelf from '@/components/account/self'
+import AccountAbout from '@/components/account/about'
 
 
 
@@ -25,7 +37,7 @@ export default new Router({
   mode: 'history',
   routes: [{
       path: subPath + '/',
-      name: 'Index',
+      name: 'Indexx',
       component: Index
     }, {
       path: subPath + '/index',
@@ -79,7 +91,52 @@ export default new Router({
       path: subPath + '/skill/comment',
       name: 'SkillComment',
       component: SkillComment
-    },
+    }, {
+      path: subPath + '/account/identity',
+      name: 'AccountIdentity',
+      component: Identity
+    }, {
+      path: subPath + '/account/person',
+      name: 'AccountPerson',
+      component: Person
+    }, {
+      path: subPath + '/account/workupload',
+      name: 'AccountWorkupload',
+      component: Workupload
+    }, {
+      path: subPath + '/account',
+      name: 'Account',
+      component: Account,
+      children: [{
+        path: '',
+        name: 'AccountWorks',
+        component: AccountWorks
+      }, {
+        path: 'works',
+        name: 'AccountWorks',
+        component: AccountWorks
+      }, {
+        path: 'article',
+        name: 'AccountArticle',
+        component: AccountArticle
+      }, {
+        path: 'love',
+        name: 'AccountLove',
+        component: AccountLove
+      }, {
+        path: 'circle',
+        name: 'AccountCircle',
+        component: AccountCircle
+      }, {
+        path: 'self',
+        name: 'AccountSelf',
+        component: AccountSelf
+      }, {
+        path: 'about',
+        name: 'AccountAbout',
+        component: AccountAbout
+      }, ]
+    }
 
 
   ]
